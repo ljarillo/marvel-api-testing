@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt"><head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="description" content="Sistema para consumo de API Marvel para trazer seus personagens e suas histórias.">
+        <meta name="author" content="Luis Jarillo">
+        <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    
+        <title>Marvel v0.1</title>
+    
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap-grid.css">
+        <link rel="stylesheet" href="css/bootstrap-reboot.css">
+    
+        <!-- Custom styles for this template -->
+        <link href="css/sticky-footer-navbar.css" rel="stylesheet">
+      </head>
+    
+      <body>
+    
+        <header>
+          <!-- Fixed navbar -->
+          <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#">Marvel</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+              <ul class="navbar-nav mr-auto">
+              </ul>
+              <form class="form-inline mt-2 mt-md-0" onsubmit="personagemController.buscaPersonagens(event)">
+                <input class="form-control mr-sm-2" id="busca" placeholder="Busca" aria-label="Busca" type="text">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Busca</button>
+              </form>
+            </div>
+          </nav>
+        </header>
+    
+        <!-- Begin page content -->
+        <main role="main" class="container">
+            <div id="mensagem-view"></div>
+            
+            <div class="text-center">
+                <button onclick="personagemController.importaPersonagens()" class="btn btn-primary text-center" type="button">
+                    Importar Personagens
+                </button>
+                <button onclick="personagemController.apaga()" class="btn btn-primary text-center" type="button">
+                    Limpar Tabela
+                </button>
+            </div> 
+            <br />
+        
+            <div id="paginacao-view"></div>
+            
+            <div id="personagens-view"></div>
+        
+            <div id="modal-view"></div>
+            <br />
+        </main>
+    
+        <footer class="footer">
+          <div class="container">
+            <span class="text-muted">Luis Jarillo </span>
+          </div>
+        </footer>
+    
+        <script>window.jQuery || document.write('<script src="js/helper/jquery.js"><\/script>')</script>
+        <script src="js/helper/popper.min.js"></script>
+
+        <script src="js/models/Personagem.js"></script>
+        <script src="js/controllers/PersonagemController.js"></script>
+        <script src="js/models/ListaPersonagens.js"></script>
+        <script src="js/models/Paginacao.js"></script>
+        <script src="js/view/View.js"></script>
+        <script src="js/view/PersonagensView.js"></script>
+        <script src="js/models/Mensagem.js"></script>
+        <script src="js/view/MensagemView.js"></script>
+        <script src="js/view/PaginacaoView.js"></script>
+        <script src="js/view/PersonagemModalView.js"></script>
+        <script src="js/helper/constants.js"></script>
+        <script src="js/helper/js-md5.js"></script>
+        <script src="js/helper/jquery.js"></script>
+        <script src="js/helper/bootstrap.js"></script>
+        <script src="js/helper/bootstrap.bundle.js"></script>
+        
+        
+        <script>
+            let personagemController = new PersonagemController();
+        </script>
+      
+    
+    </body></html>
